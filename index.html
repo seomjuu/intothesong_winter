@@ -12,21 +12,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#d8d6d0;color:#1a1a1a;over
 .flake{position:absolute;top:-20px;border-radius:50%;background:#ffffff;animation:snowfall linear infinite;}
 @keyframes snowfall{to{transform:translateY(100vh);opacity:0;}}
 .page{max-width:420px;margin:0 auto;padding:0 28px;}
-.hero{position:relative;background:#e8e6e0;min-height:620px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 28px 40px 28px;}
-.circle{position:absolute;border-radius:50%;border:1px solid rgba(150,150,150,0.35);pointer-events:none;}
-.c1{width:260px;height:260px;top:80px;left:-30px;}
-.c2{width:320px;height:320px;top:160px;left:90px;}
-.c3{width:200px;height:200px;top:260px;right:-10px;}
-.block{position:absolute;background:#888;}
-.b1{width:18px;height:18px;top:52px;left:52px;}
-.b2{width:120px;height:38px;top:90px;right:28px;}
-.b3{width:55px;height:22px;top:140px;right:28px;background:#aaa;}
-.b4{width:22px;height:22px;top:350px;left:155px;}
-.title-block{position:absolute;top:100px;left:28px;}
-.kor-left{font-size:90px;font-weight:700;color:#fff;line-height:0.85;letter-spacing:-4px;opacity:0.92;}
-.teal-block{position:absolute;top:270px;right:28px;display:flex;flex-direction:column;align-items:flex-end;}
-.kor-right{font-size:90px;font-weight:700;color:#1ba8a8;line-height:0.85;letter-spacing:-4px;}
-.teal-dot{width:52px;height:52px;border-radius:50%;background:#1ba8a8;margin-top:8px;}
+.hero{position:relative;min-height:620px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 28px 40px 28px;background-image:url('hero.png');background-size:cover;background-position:center top;}
 .info-row1{display:flex;justify-content:space-between;font-size:11px;letter-spacing:2px;color:#444;margin-bottom:16px;}
 .info-row2{font-size:13px;font-weight:500;color:#1a1a1a;letter-spacing:1px;}
 .divider-line{width:100%;height:1px;background:#b0aca4;margin-top:32px;}
@@ -65,18 +51,6 @@ body{font-family:'Noto Sans KR',sans-serif;background:#d8d6d0;color:#1a1a1a;over
 <div class="snow-container" id="snow"></div>
 <div class="page">
   <div class="hero">
-    <div class="circle c1"></div>
-    <div class="circle c2"></div>
-    <div class="circle c3"></div>
-    <div class="block b1"></div>
-    <div class="block b2"></div>
-    <div class="block b3"></div>
-    <div class="block b4"></div>
-    <div class="title-block"><div class="kor-left">눈</div></div>
-    <div class="teal-block">
-      <div class="kor-right">구경</div>
-      <div class="teal-dot"></div>
-    </div>
     <div class="info-row1">
       <span>INTOTHESONG</span>
       <span>WINTER SPECIAL CONCERT</span>
