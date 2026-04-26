@@ -11,15 +11,12 @@ body{font-family:'Noto Sans KR',sans-serif;background:#d8d6d0;color:#1a1a1a;over
 .snow-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10;}
 .flake{position:absolute;top:-20px;border-radius:50%;background:#ffffff;animation:snowfall linear infinite;}
 @keyframes snowfall{to{transform:translateY(100vh);opacity:0;}}
-
 nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid rgba(0,0,0,0.08);}
 .nav-inner{max-width:420px;margin:0 auto;padding:0 28px;display:flex;gap:0;}
 .nav-btn{background:transparent;border:none;padding:14px 20px 12px;font-size:13px;font-family:'Noto Sans KR',sans-serif;font-weight:400;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;}
 .nav-btn.active{color:#1a1a1a;border-bottom:2px solid #1ba8a8;font-weight:500;}
-
 .section{display:none;}
 .section.active{display:block;}
-
 .page{max-width:420px;margin:0 auto;padding:0 28px;}
 .hero{position:relative;background:#e8e6e0;min-height:620px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:0 28px 40px 28px;}
 .circle{position:absolute;border-radius:50%;border:1px solid rgba(150,150,150,0.35);pointer-events:none;}
@@ -68,19 +65,21 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
 .ticket-btn:hover{background:#168f8f;}
 .footer{text-align:center;padding:24px 0 48px;font-size:12px;color:#888;font-weight:300;line-height:1.8;}
 .footer a{color:#1ba8a8;text-decoration:none;}
-
 .band-section{padding:40px 0 60px;}
 .band-name{font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:20px;text-align:left;}
 .band-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;border-radius:12px;display:block;margin:0 auto 20px;}
 .band-quote{font-size:13px;color:#555;line-height:1.9;font-weight:300;text-align:right;margin-bottom:40px;}
 .member-label{font-size:10px;letter-spacing:2px;color:#1ba8a8;margin-bottom:10px;}
-.member-list{display:flex;flex-wrap:wrap;gap:8px;}
+.member-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
 .member-tag{background:rgba(255,255,255,0.6);border:1px solid rgba(0,0,0,0.1);border-radius:20px;padding:6px 14px;font-size:13px;color:#333;font-weight:300;}
+.setlist-label{font-size:10px;letter-spacing:2px;color:#1ba8a8;margin-bottom:14px;}
+.setlist{display:flex;flex-direction:column;gap:10px;}
+.setlist-row{font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;}
+.setlist-artist{color:#888;}
 </style>
 </head>
 <body>
 <div class="snow-container" id="snow"></div>
-
 <nav>
   <div class="nav-inner">
     <button class="nav-btn active" onclick="showSection('home', this)">눈구경</button>
@@ -151,17 +150,6 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
         </div>
         <div class="result-box" id="result"></div>
       </div>
-      <div style="margin-top:32px;">
-        <div style="font-size:10px;letter-spacing:2px;color:#1ba8a8;margin-bottom:14px;">SETLIST</div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;"><span>Medicine</span><span style="color:#888;">The Volunteers</span></div>
-          <div style="font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;"><span>COBALT</span><span style="color:#888;">김뜻돌</span></div>
-          <div style="font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;"><span>0308</span><span style="color:#888;">보수동쿨러</span></div>
-          <div style="font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;"><span>E</span><span style="color:#888;">새소년</span></div>
-          <div style="font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;"><span>Hypocreep</span><span style="color:#888;">The Volunteers</span></div>
-          <div style="font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;"><span>비 오는 거리에서 춤을 추자</span><span style="color:#888;">김뜻돌</span></div>
-        </div>
-      </div>
     </div>
     <div class="footer">
       고려대학교 정경대학 노래패 인투더쏭<br>
@@ -185,6 +173,15 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
         <span class="member-tag">김성식</span>
         <span class="member-tag">서민주</span>
         <span class="member-tag">안서현</span>
+      </div>
+      <div class="setlist-label">SETLIST</div>
+      <div class="setlist">
+        <div class="setlist-row"><span>Medicine</span><span class="setlist-artist">The Volunteers</span></div>
+        <div class="setlist-row"><span>COBALT</span><span class="setlist-artist">김뜻돌</span></div>
+        <div class="setlist-row"><span>0308</span><span class="setlist-artist">보수동쿨러</span></div>
+        <div class="setlist-row"><span>E</span><span class="setlist-artist">새소년</span></div>
+        <div class="setlist-row"><span>Hypocreep</span><span class="setlist-artist">The Volunteers</span></div>
+        <div class="setlist-row"><span>비 오는 거리에서 춤을 추자</span><span class="setlist-artist">김뜻돌</span></div>
       </div>
     </div>
     <div class="footer">
@@ -225,7 +222,7 @@ function ans(q,val){
     const key=answers[0]+answers[2];
     const r=results[key]||results['AC'];
     const box=document.getElementById('result');
-    box.innerHTML='<div class="r-emoji">'+r.emoji+'</div><div class="r-label">오늘 밤 당신의 노래</div><div class="r-song">'+r.song+'</div><div class="r-artist">'+r.artist+'</div><div class="r-desc">'+r.desc+'<br><br>이 곡, 눈구경 공연에서 만나볼 수 있어요. </div><button class="retry" onclick="retry()">다시 해보기</button><a class="ticket-btn" href="https://forms.gle/wqGTnkTKCnLKcgdN8" target="_blank">라이브 들으러 오기</a>';
+    box.innerHTML='<div class="r-emoji">'+r.emoji+'</div><div class="r-label">오늘 밤 당신의 노래</div><div class="r-song">'+r.song+'</div><div class="r-artist">'+r.artist+'</div><div class="r-desc">'+r.desc+'<br><br>이 곡, 눈구경 공연에서 만나볼 수 있어요.</div><button class="retry" onclick="retry()">다시 해보기</button><a class="ticket-btn" href="https://forms.gle/wqGTnkTKCnLKcgdN8" target="_blank">라이브 들으러 오기</a>';
     box.style.display='block';
     document.getElementById('prog').style.width='100%';
   }
