@@ -285,7 +285,7 @@ function showBand(id, btn){
 const answers=[];
 const results={
   AA:{song:"겨울잠",artist:"아이유",desc:"따뜻하고 포근한 당신. 오늘 밤 우리의 무대가 당신의 겨울을 포근하게 감싸드릴게요.",emoji:"❄️"},
-  AB:{song:"비 오는 거리에서 춤을 추자",artist:"김뜻돌",desc:"자유롭고 발랄한 당신!<br>고민은 잊고 다함께 춤추고 뛰어 놀아요.",emoji:"🌨️"},
+  AB:{song:"비 오는 거리에서 춤을 추자",artist:"김뜻돌",desc:"자유롭고 발랄한 당신!<br>고민은 잊고 다함께 춤추고 뛰어 놀아요.",img:"meaning.jpg"},
   AC:{song:"사랑한다는 말",artist:"성시경",desc:"감성 가득한 당신. 오늘 밤 음악과 함께 따뜻한 감정을 느껴보세요.",emoji:"🕯️"},
   BA:{song:"첫눈처럼 너에게 가겠다",artist:"에일리",desc:"따뜻한 에너지를 가진 당신. 우리의 무대가 당신에게 힘이 될 거예요.",emoji:"☃️"},
   BB:{song:"크리스마스니까",artist:"거미",desc:"활기차고 따뜻한 당신. 오늘 밤 함께 신나게 즐겨봐요!",emoji:"🎶"},
@@ -305,7 +305,7 @@ function ans(q,val){
     const key=answers[0]+answers[2];
     const r=results[key]||results['AC'];
     const box=document.getElementById('result');
-    box.innerHTML='<div class="r-emoji">'+r.emoji+'</div><div class="r-label">오늘 밤 당신의 노래</div><div class="r-song">'+r.song+'</div><div class="r-artist">'+r.artist+'</div><div class="r-desc">'+r.desc+'<br><br>이 곡, 눈구경 공연에서 만나볼 수 있어요.</div><button class="retry" onclick="retry()">다시 해보기</button><a class="ticket-btn" href="https://forms.gle/wqGTnkTKCnLKcgdN8" target="_blank">라이브 들으러 오기</a>';
+    box.innerHTML='<div>'+(r.img?'<img src="'+r.img+'" style="width:120px;height:120px;object-fit:cover;border-radius:12px;margin-bottom:14px;">':'<div class="r-emoji">'+r.emoji+'</div>')+'</div><div class="r-label">오늘 밤 당신의 노래</div><div class="r-song">'+r.song+'</div><div class="r-artist">'+r.artist+'</div><div class="r-desc">'+r.desc+'<br><br>이 곡, 눈구경 공연에서 만나볼 수 있어요.</div><button class="retry" onclick="retry()">다시 해보기</button><a class="ticket-btn" href="https://forms.gle/wqGTnkTKCnLKcgdN8" target="_blank">라이브 들으러 오기</a>';
     box.style.display='block';
     document.getElementById('prog').style.width='100%';
   }
