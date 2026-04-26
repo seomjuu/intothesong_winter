@@ -305,7 +305,7 @@ function ans(q,val){
     const key=answers[0]+answers[2];
     const r=results[key]||results['AC'];
     const box=document.getElementById('result');
-    box.innerHTML='<div>'+(r.img?'<img src="'+r.img+'" style="width:120px;height:120px;object-fit:cover;border-radius:12px;margin-bottom:14px;">':'<div class="r-emoji">'+r.emoji+'</div>')+'</div><div class="r-label">당신의 취향은</div><div class="r-song">'+r.song+'</div><div class="r-artist">'+r.artist+'</div><div class="r-desc">'+r.desc+'<br><br>이 곡, 눈구경 공연에서 만나볼 수 있어요.</div><button class="retry" onclick="retry()">다시 해보기</button><a class="ticket-btn" href="https://forms.gle/wqGTnkTKCnLKcgdN8" target="_blank">라이브 들으러 오기</a>';
+    box.innerHTML='<div>'+(r.img?'<img src="'+r.img+'" style="width:120px;height:120px;object-fit:cover;border-radius:12px;margin-bottom:14px;">':'<div class="r-emoji">'+r.emoji+'</div>')+'</div><div class="r-label">당신의 취향은</div><div class="r-song">'+r.song+'</div><div class="r-artist">'+r.artist+'</div><div class="r-desc">'+r.desc+'<br><br>눈구경에서 기다릴게요.</div><button class="retry" onclick="retry()">다시 해보기</button><a class="ticket-btn" href="https://forms.gle/wqGTnkTKCnLKcgdN8" target="_blank">라이브 들으러 오기</a>';
     box.style.display='block';
     document.getElementById('prog').style.width='100%';
   }
