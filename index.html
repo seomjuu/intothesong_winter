@@ -13,7 +13,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:#d8d6d0;color:#1a1a1a;over
 @keyframes snowfall{to{transform:translateY(100vh);opacity:0;}}
 nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid rgba(0,0,0,0.08);}
 .nav-inner{max-width:420px;margin:0 auto;padding:0 28px;display:flex;gap:0;}
-.nav-btn{background:transparent;border:none;padding:14px 20px 12px;font-size:13px;font-family:'Noto Sans KR',sans-serif;font-weight:400;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;}
+.nav-btn{background:transparent;border:none;padding:14px 16px 12px;font-size:13px;font-family:'Noto Sans KR',sans-serif;font-weight:400;color:#888;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;}
 .nav-btn.active{color:#1a1a1a;border-bottom:2px solid #1ba8a8;font-weight:500;}
 .section{display:none;}
 .section.active{display:block;}
@@ -63,17 +63,17 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
 .retry:hover{background:rgba(27,168,168,0.08);}
 .ticket-btn{display:block;margin:0 auto;background:#1ba8a8;color:#fff;border-radius:20px;padding:11px 28px;font-size:13px;font-family:'Noto Sans KR',sans-serif;text-decoration:none;width:fit-content;}
 .ticket-btn:hover{background:#168f8f;}
-.footer{text-align:center;padding:24px 0 48px;font-size:12px;color:#888;font-weight:300;line-height:1.8;}
+.footer{text-align:center;padding:24px 28px 48px;font-size:12px;color:#888;font-weight:300;line-height:1.8;}
 .footer a{color:#1ba8a8;text-decoration:none;}
-.band-tabs{max-width:420px;margin:0 auto;padding:0 28px;display:flex;gap:6px;overflow-x:auto;padding-top:16px;padding-bottom:4px;scrollbar-width:none;}
+.band-tabs{max-width:420px;margin:0 auto;padding:16px 28px 4px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;}
 .band-tabs::-webkit-scrollbar{display:none;}
 .band-tab{background:transparent;border:1px solid rgba(0,0,0,0.15);border-radius:20px;padding:7px 14px;font-size:12px;font-family:'Noto Sans KR',sans-serif;font-weight:300;color:#888;cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0;}
 .band-tab.active{background:#1ba8a8;border-color:#1ba8a8;color:#fff;font-weight:500;}
 .band-content{display:none;}
 .band-content.active{display:block;}
 .band-section{padding:24px 0 60px;}
-.band-name{font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:20px;text-align:left;}
-.band-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;border-radius:12px;display:block;margin:0 auto 20px;}
+.band-name{font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:20px;}
+.band-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;border-radius:12px;display:block;margin-bottom:20px;}
 .band-photo-placeholder{width:100%;aspect-ratio:1;border-radius:12px;background:rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:13px;color:#aaa;font-weight:300;}
 .band-quote{font-size:13px;color:#555;line-height:1.9;font-weight:300;text-align:right;margin-bottom:40px;}
 .member-label{font-size:10px;letter-spacing:2px;color:#1ba8a8;margin-bottom:10px;}
@@ -83,6 +83,9 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
 .setlist{display:flex;flex-direction:column;gap:10px;}
 .setlist-row{font-size:13px;color:#333;font-weight:300;display:flex;justify-content:space-between;}
 .setlist-artist{color:#888;}
+.notice-section{padding:40px 0 60px;}
+.notice-title{font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:28px;}
+.notice-text{font-size:14px;line-height:2;color:#333;font-weight:300;word-break:keep-all;}
 </style>
 </head>
 <body>
@@ -91,6 +94,7 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
   <div class="nav-inner">
     <button class="nav-btn active" onclick="showSection('home', this)">눈구경</button>
     <button class="nav-btn" onclick="showSection('band', this)">공연팀 소개</button>
+    <button class="nav-btn" onclick="showSection('notice', this)">Notice</button>
   </div>
 </nav>
 
@@ -174,7 +178,6 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
     <button class="band-tab" onclick="showBand('band5', this)">시다림</button>
   </div>
   <div class="page">
-
     <div id="band1" class="band-content active">
       <div class="band-section">
         <div class="band-name">적신호시 직진</div>
@@ -198,79 +201,69 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
         </div>
       </div>
     </div>
-
     <div id="band2" class="band-content">
       <div class="band-section">
         <div class="band-name">스키야키</div>
         <div class="band-photo-placeholder">사진을 추가해주세요</div>
         <div class="band-quote">소개글을 추가해주세요</div>
         <div class="member-label">MEMBERS</div>
-        <div class="member-list">
-          <span class="member-tag">멤버 1</span>
-          <span class="member-tag">멤버 2</span>
-        </div>
+        <div class="member-list"><span class="member-tag">멤버 1</span><span class="member-tag">멤버 2</span></div>
         <div class="setlist-label">SETLIST</div>
-        <div class="setlist">
-          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
-        </div>
+        <div class="setlist"><div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div></div>
       </div>
     </div>
-
     <div id="band3" class="band-content">
       <div class="band-section">
         <div class="band-name">슈퍼소닉</div>
         <div class="band-photo-placeholder">사진을 추가해주세요</div>
         <div class="band-quote">소개글을 추가해주세요</div>
         <div class="member-label">MEMBERS</div>
-        <div class="member-list">
-          <span class="member-tag">멤버 1</span>
-          <span class="member-tag">멤버 2</span>
-        </div>
+        <div class="member-list"><span class="member-tag">멤버 1</span><span class="member-tag">멤버 2</span></div>
         <div class="setlist-label">SETLIST</div>
-        <div class="setlist">
-          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
-        </div>
+        <div class="setlist"><div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div></div>
       </div>
     </div>
-
     <div id="band4" class="band-content">
       <div class="band-section">
         <div class="band-name">NONAME</div>
         <div class="band-photo-placeholder">사진을 추가해주세요</div>
         <div class="band-quote">소개글을 추가해주세요</div>
         <div class="member-label">MEMBERS</div>
-        <div class="member-list">
-          <span class="member-tag">멤버 1</span>
-          <span class="member-tag">멤버 2</span>
-        </div>
+        <div class="member-list"><span class="member-tag">멤버 1</span><span class="member-tag">멤버 2</span></div>
         <div class="setlist-label">SETLIST</div>
-        <div class="setlist">
-          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
-        </div>
+        <div class="setlist"><div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div></div>
       </div>
     </div>
-
     <div id="band5" class="band-content">
       <div class="band-section">
         <div class="band-name">시다림</div>
         <div class="band-photo-placeholder">사진을 추가해주세요</div>
         <div class="band-quote">소개글을 추가해주세요</div>
         <div class="member-label">MEMBERS</div>
-        <div class="member-list">
-          <span class="member-tag">멤버 1</span>
-          <span class="member-tag">멤버 2</span>
-        </div>
+        <div class="member-list"><span class="member-tag">멤버 1</span><span class="member-tag">멤버 2</span></div>
         <div class="setlist-label">SETLIST</div>
-        <div class="setlist">
-          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
-        </div>
+        <div class="setlist"><div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div></div>
       </div>
     </div>
-
   </div>
-  <div class="footer" style="text-align:center;padding:24px 28px 48px;font-size:12px;color:#888;font-weight:300;line-height:1.8;">
+  <div class="footer">
     고려대학교 정경대학 노래패 인투더쏭<br>
-    Instagram <a href="https://instagram.com/intothesong_ku" style="color:#1ba8a8;text-decoration:none;">@intothesong_ku</a>
+    Instagram <a href="https://instagram.com/intothesong_ku">@intothesong_ku</a>
+  </div>
+</div>
+
+<div id="notice" class="section">
+  <div class="page">
+    <div class="notice-section">
+      <div class="notice-title">Notice</div>
+      <div class="notice-text">
+        <p>공지사항을 입력해주세요.</p>
+      </div>
+    </div>
+    <div class="footer">
+      고려대학교 정경대학 노래패 인투더쏭<br>
+      Instagram <a href="https://instagram.com/intothesong_ku">@intothesong_ku</a>
+    </div>
   </div>
 </div>
 
