@@ -65,9 +65,16 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
 .ticket-btn:hover{background:#168f8f;}
 .footer{text-align:center;padding:24px 0 48px;font-size:12px;color:#888;font-weight:300;line-height:1.8;}
 .footer a{color:#1ba8a8;text-decoration:none;}
-.band-section{padding:40px 0 60px;}
+.band-tabs{max-width:420px;margin:0 auto;padding:0 28px;display:flex;gap:6px;overflow-x:auto;padding-top:16px;padding-bottom:4px;scrollbar-width:none;}
+.band-tabs::-webkit-scrollbar{display:none;}
+.band-tab{background:transparent;border:1px solid rgba(0,0,0,0.15);border-radius:20px;padding:7px 14px;font-size:12px;font-family:'Noto Sans KR',sans-serif;font-weight:300;color:#888;cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0;}
+.band-tab.active{background:#1ba8a8;border-color:#1ba8a8;color:#fff;font-weight:500;}
+.band-content{display:none;}
+.band-content.active{display:block;}
+.band-section{padding:24px 0 60px;}
 .band-name{font-size:20px;font-weight:500;color:#1a1a1a;margin-bottom:20px;text-align:left;}
 .band-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;border-radius:12px;display:block;margin:0 auto 20px;}
+.band-photo-placeholder{width:100%;aspect-ratio:1;border-radius:12px;background:rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:13px;color:#aaa;font-weight:300;}
 .band-quote{font-size:13px;color:#555;line-height:1.9;font-weight:300;text-align:right;margin-bottom:40px;}
 .member-label{font-size:10px;letter-spacing:2px;color:#1ba8a8;margin-bottom:10px;}
 .member-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
@@ -159,35 +166,111 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
 </div>
 
 <div id="band" class="section">
+  <div class="band-tabs">
+    <button class="band-tab active" onclick="showBand('band1', this)">적신호시 직진</button>
+    <button class="band-tab" onclick="showBand('band2', this)">스키야키</button>
+    <button class="band-tab" onclick="showBand('band3', this)">슈퍼소닉</button>
+    <button class="band-tab" onclick="showBand('band4', this)">NONAME</button>
+    <button class="band-tab" onclick="showBand('band5', this)">시다림</button>
+  </div>
   <div class="page">
-    <div class="band-section">
-      <div class="band-name">적신호시 직진</div>
-      <img class="band-photo" src="band.jpg" alt="적신호시 직진 밴드 사진">
-      <div class="band-quote">
-        전방후방 캥거루 주의!<br>
-        모두가 적신호를 보여도 우리는 계속 앞으로 갑니다
-      </div>
-      <div class="member-label">MEMBERS</div>
-      <div class="member-list">
-        <span class="member-tag">김민기</span>
-        <span class="member-tag">김성식</span>
-        <span class="member-tag">서민주</span>
-        <span class="member-tag">안서현</span>
-      </div>
-      <div class="setlist-label">SETLIST</div>
-      <div class="setlist">
-        <div class="setlist-row"><span>Medicine</span><span class="setlist-artist">The Volunteers</span></div>
-        <div class="setlist-row"><span>COBALT</span><span class="setlist-artist">김뜻돌</span></div>
-        <div class="setlist-row"><span>0308</span><span class="setlist-artist">보수동쿨러</span></div>
-        <div class="setlist-row"><span>E</span><span class="setlist-artist">새소년</span></div>
-        <div class="setlist-row"><span>Hypocreep</span><span class="setlist-artist">The Volunteers</span></div>
-        <div class="setlist-row"><span>비 오는 거리에서 춤을 추자</span><span class="setlist-artist">김뜻돌</span></div>
+
+    <div id="band1" class="band-content active">
+      <div class="band-section">
+        <div class="band-name">적신호시 직진</div>
+        <img class="band-photo" src="band.jpg" alt="적신호시 직진">
+        <div class="band-quote">전방후방 캥거루 주의!<br>모두가 적신호를 보여도 우리는 계속 앞으로 갑니다</div>
+        <div class="member-label">MEMBERS</div>
+        <div class="member-list">
+          <span class="member-tag">김민기</span>
+          <span class="member-tag">김성식</span>
+          <span class="member-tag">서민주</span>
+          <span class="member-tag">안서현</span>
+        </div>
+        <div class="setlist-label">SETLIST</div>
+        <div class="setlist">
+          <div class="setlist-row"><span>Medicine</span><span class="setlist-artist">The Volunteers</span></div>
+          <div class="setlist-row"><span>COBALT</span><span class="setlist-artist">김뜻돌</span></div>
+          <div class="setlist-row"><span>0308</span><span class="setlist-artist">보수동쿨러</span></div>
+          <div class="setlist-row"><span>E</span><span class="setlist-artist">새소년</span></div>
+          <div class="setlist-row"><span>Hypocreep</span><span class="setlist-artist">The Volunteers</span></div>
+          <div class="setlist-row"><span>비 오는 거리에서 춤을 추자</span><span class="setlist-artist">김뜻돌</span></div>
+        </div>
       </div>
     </div>
-    <div class="footer">
-      고려대학교 정경대학 노래패 인투더쏭<br>
-      Instagram <a href="https://instagram.com/intothesong_ku">@intothesong_ku</a>
+
+    <div id="band2" class="band-content">
+      <div class="band-section">
+        <div class="band-name">스키야키</div>
+        <div class="band-photo-placeholder">사진을 추가해주세요</div>
+        <div class="band-quote">소개글을 추가해주세요</div>
+        <div class="member-label">MEMBERS</div>
+        <div class="member-list">
+          <span class="member-tag">멤버 1</span>
+          <span class="member-tag">멤버 2</span>
+        </div>
+        <div class="setlist-label">SETLIST</div>
+        <div class="setlist">
+          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
+        </div>
+      </div>
     </div>
+
+    <div id="band3" class="band-content">
+      <div class="band-section">
+        <div class="band-name">슈퍼소닉</div>
+        <div class="band-photo-placeholder">사진을 추가해주세요</div>
+        <div class="band-quote">소개글을 추가해주세요</div>
+        <div class="member-label">MEMBERS</div>
+        <div class="member-list">
+          <span class="member-tag">멤버 1</span>
+          <span class="member-tag">멤버 2</span>
+        </div>
+        <div class="setlist-label">SETLIST</div>
+        <div class="setlist">
+          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="band4" class="band-content">
+      <div class="band-section">
+        <div class="band-name">NONAME</div>
+        <div class="band-photo-placeholder">사진을 추가해주세요</div>
+        <div class="band-quote">소개글을 추가해주세요</div>
+        <div class="member-label">MEMBERS</div>
+        <div class="member-list">
+          <span class="member-tag">멤버 1</span>
+          <span class="member-tag">멤버 2</span>
+        </div>
+        <div class="setlist-label">SETLIST</div>
+        <div class="setlist">
+          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="band5" class="band-content">
+      <div class="band-section">
+        <div class="band-name">시다림</div>
+        <div class="band-photo-placeholder">사진을 추가해주세요</div>
+        <div class="band-quote">소개글을 추가해주세요</div>
+        <div class="member-label">MEMBERS</div>
+        <div class="member-list">
+          <span class="member-tag">멤버 1</span>
+          <span class="member-tag">멤버 2</span>
+        </div>
+        <div class="setlist-label">SETLIST</div>
+        <div class="setlist">
+          <div class="setlist-row"><span>곡 제목</span><span class="setlist-artist">아티스트</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer" style="text-align:center;padding:24px 28px 48px;font-size:12px;color:#888;font-weight:300;line-height:1.8;">
+    고려대학교 정경대학 노래패 인투더쏭<br>
+    Instagram <a href="https://instagram.com/intothesong_ku" style="color:#1ba8a8;text-decoration:none;">@intothesong_ku</a>
   </div>
 </div>
 
@@ -195,6 +278,13 @@ nav{position:sticky;top:0;z-index:100;background:#d8d6d0;border-bottom:1px solid
 function showSection(id, btn){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo(0,0);
+}
+function showBand(id, btn){
+  document.querySelectorAll('.band-content').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.band-tab').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
   window.scrollTo(0,0);
